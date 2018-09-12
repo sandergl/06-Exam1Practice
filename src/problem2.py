@@ -188,7 +188,7 @@ def problem2b(rect, n, delta, win):
     rect.attach_to(win)
     x = rect.get_lower_left_corner()
     y = rect.get_upper_right_corner()
-    for k in range(n):
+    for k in range(n-1):
         x.x = x.x - delta
         x.y = x.y + delta
         y.x = y.x + delta
