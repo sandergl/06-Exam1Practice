@@ -185,8 +185,19 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
+    rect.attach_to(win)
+    x = rect.get_lower_left_corner()
+    y = rect.get_upper_right_corner()
+    for k in range(n):
+        x.x = x.x - delta
+        x.y = x.y + delta
+        y.x = y.x + delta
+        y.y = y.y - delta
+        r = rg.Rectangle(x, y)
+        r.attach_to(win)
+    win.render()
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
